@@ -1,8 +1,8 @@
 <template>
   <div class="hello">
-    <Tournament name="ww124340"></Tournament>
-    <Tournament name="WWSF4"></Tournament>
-    <Tournament name="Ww237t7"></Tournament>
+    <Tournament host="brackets.superminerbattle.farm" name="ww124340"></Tournament>
+    <Tournament host="brackets.superminerbattle.farm" name="WWSF4"></Tournament>
+    <Tournament host="brackets.superminerbattle.farm" name="Ww237t7"></Tournament>
   </div>
 </template>
 

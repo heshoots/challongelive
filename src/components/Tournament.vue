@@ -32,7 +32,7 @@ const deepEqual = require('deep-equal');
 
 export default {
   name: 'HelloWorld',
-  props: ['name', 'api_key'],
+  props: ['name', 'host'],
   data() {
     return {
       tournament: {},
@@ -91,7 +91,7 @@ export default {
     },
   },
   mounted() {
-    request.get(`http://localhost/tournaments/${this.name}.json?include_participants=1&include_matches=1`)
+    request.get(`http://${this.host}/tournaments/${this.name}.json?include_participants=1&include_matches=1`)
       .then((data) => {
         this.tournament = this.buildTournament(data.body.tournament);
       });
