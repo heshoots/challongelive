@@ -1,8 +1,11 @@
 <template>
-  <div class="hello">
-    <Tournament host="brackets.superminerbattle.farm" name="ww124340"></Tournament>
-    <Tournament host="brackets.superminerbattle.farm" name="WWSF4"></Tournament>
-    <Tournament host="brackets.superminerbattle.farm" name="Ww237t7"></Tournament>
+  <div>
+    <div class="hello">
+      <Tournament v-on:remove="remove(name)" v-for="name in brackets" host="brackets.superminerbattle.farm" v-bind:name="name"></Tournament>
+    </div>
+    <div class="options">
+      <input v-model="newBracket"></input><button v-on:click="add(newBracket)">add</button>
+    </div>
   </div>
 </template>
 
@@ -14,9 +17,19 @@ export default {
   components: {
     Tournament,
   },
+  methods: {
+    remove(tournamentname) {
+      this.brackets.splice(this.brackets.indexOf(tournamentname), 1);
+    },
+    add(name) {
+      this.brackets.push(name);
+    },
+  },
   data() {
     return {
       msg: 'Welcome to Your Vue.js App',
+      brackets: ['ww124340', 'WWSF4', 'Ww237t7'],
+      newBracket: '',
     };
   },
 };
@@ -41,5 +54,6 @@ a {
 .hello {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 </style>

@@ -1,6 +1,7 @@
 <template>
   <div class="tournament">
     <h1>{{ tournament.game_name }}</h1>
+    <h2>{{ name }} <button v-on:click="$emit('remove', name)">X</button></h2>
     <h2>AWAITING SCORES</h2>
       <div v-for="match in tournament.matches.filter(elem => elem.underway_at !== null && elem.state == 'open')">
         {{ match.player1 }}, {{ match.player2 }}
