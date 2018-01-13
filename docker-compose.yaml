@@ -3,8 +3,10 @@ services:
   nginx:
     image: nginx
     ports:
-      - "8080:8080"
-      - "80:80"
+      - "8080:80"
     volumes:
-      - "/c/Users/maxpr/Documents/challongelive/nginx:/etc/nginx/conf.d"
-      - "/c/Users/maxpr/Documents/challongelive/dist:/var/www/vue"
+      - "./nginx:/etc/nginx/conf.d"
+  challonge:
+    image: quorauk/challongelive:latest
+    ports:
+      - "80:80"

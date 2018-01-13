@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="hello">
-      <Tournament v-on:remove="remove(name)" v-for="name in brackets" host="brackets.superminerbattle.farm" v-bind:name="name"></Tournament>
+      <Tournament v-on:remove="remove(name)" v-for="name in brackets" host="brackets.superminerbattle.farm:8080" v-bind:name="name"></Tournament>
     </div>
     <div class="options">
       <input v-model="newBracket"></input><button v-on:click="add(newBracket)">add</button>
