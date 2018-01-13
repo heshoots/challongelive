@@ -1,13 +1,13 @@
 sudo: required
 services:
-    - docker
+- docker
 language: node_js
 node_js:
-  - "9"
+- "9"
 script:
-  npm install
-  npm run build
+- npm install
+- npm run build
 after_success:
-  docker build -t quorauk/challongelive .
-  docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
-  docker push quorauk/challongelive
+- docker build -t quorauk/challongelive .
+- docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+- docker push quorauk/challongelive
